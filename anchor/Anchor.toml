@@ -1,0 +1,32 @@
+[toolchain]
+anchor_version = "0.30.1"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+shuihu_dapp = "GeMsK5Ru78XGVCQoyLkc4ECbpFZEgKkK1ukAiMWadHpc"
+
+[programs.mainnet]
+shuihu_dapp = "GeMsK5Ru78XGVCQoyLkc4ECbpFZEgKkK1ukAiMWadHpc"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "https://mainnet.helius-rpc.com/?api-key=9f2fa720-68a4-4915-9488-62bf5d01019f"
+wallet = "~/.config/solana/shuihu_pro.json"
+
+[scripts]
+test = "../node_modules/.bin/jest --preset ts-jest --forceExit --detectOpenHandles"
+
+[test]
+startup_wait = 500000
+shutdown_wait = 500000
+upgradeable = false
+
+[test.validator]
+bind_address = "0.0.0.0"
+ledger = ".anchor/test-ledger"
+rpc_port = 8899
